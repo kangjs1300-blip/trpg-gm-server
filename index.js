@@ -45,7 +45,12 @@ app.post('/gm', async (req, res) => {
         });
 
         const data = await response.json();
-        const content = data.choices[0].message.content;
+        console.log("Groq 응답:", JSON.stringify(data));
+if (!data.choices || !data.choices[0]) {
+    console.error("Groq 응답 오류:", JSON.stringify(data));
+    return res.status(500).json({ error: '서버 오류' });
+}
+const content = data.choices[0].message.content;
 
         // JSON 파싱
         const clean = content.replace(/```json|```/g, '').trim();
