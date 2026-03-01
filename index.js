@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
     res.json({ status: 'TRPG GM 서버 작동 중!' });
 });
 
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT;
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`서버 실행 중: ${PORT}`);
 });
