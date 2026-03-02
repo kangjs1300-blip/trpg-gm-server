@@ -44,4 +44,5 @@ app.post('/gm', async (req, res) => {
 
 app.get('/', (req, res) => res.send('OK'));
 
-app.listen(process.env.PORT || 3000, () => console.log('서버 실행 중: ' + (process.env.PORT || 3000)));
+app.listen(process.env.PORT || 10000, '0.0.0.0', () => console.log('서버 실행 중: ' + (process.env.PORT || 10000)));
+
